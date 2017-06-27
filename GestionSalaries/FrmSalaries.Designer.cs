@@ -243,6 +243,7 @@
             this.btnValider.TabIndex = 0;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // btnAnnuler
             // 
@@ -329,6 +330,7 @@
             this.cbSalarié.Name = "cbSalarié";
             this.cbSalarié.Size = new System.Drawing.Size(166, 21);
             this.cbSalarié.TabIndex = 5;
+            this.cbSalarié.SelectedIndexChanged += new System.EventHandler(this.cbSalarié_SelectedIndexChanged);
             // 
             // btnNouveauS
             // 
