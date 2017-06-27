@@ -107,15 +107,7 @@ namespace GestionSalaraies
                     btnValider.Enabled = true;
                     txtMatricule.ReadOnly = false;
                     txtNomS.ReadOnly = false;
-                    if (salarie is Commercial)
-                    {
-                        grpBoxCommerciaux.Visible = true;
-                        txtCA.ReadOnly = false;
-                        txtTxCom.ReadOnly = false;
-                    }
-                    else
-                        grpBoxCommerciaux.Visible = false;
-
+                    grpBoxCommerciaux.Visible = false;
                     ModifierSalarie();
                     break;
                 case Contextes.AjoutValider:
@@ -154,7 +146,7 @@ namespace GestionSalaraies
                     salarie.DateNaissance = Convert.ToDateTime(txtDatenaisance.Text);
                     salarie.SalaireBrut = Convert.ToInt32(txtSalaireB);
                     salarie.TauxCS = Convert.ToInt32(txtTxCS);
-                    if(salarie is Commercial)
+                    if(chkCommercial.Checked ==  true)
                     {
                         commercial.ChiffreAffaire = Convert.ToInt32(txtCA);
                         commercial.TauxCS = Convert.ToInt32(txtTxCS);
@@ -203,7 +195,7 @@ namespace GestionSalaraies
         private void cbSalarié_SelectedIndexChanged(object sender, EventArgs e)
         {
             salarie = salaries.ExtraireSalarie(cbSalarié.Items[cbSalarié.SelectedIndex].ToString());
-            ChargerSalaries();
+            ChargerValeursSalarie();
             GestionnaireContextes(Contextes.Consultation);
         }
        
@@ -222,10 +214,9 @@ namespace GestionSalaraies
                     TauxCS = Convert.ToInt32(txtTxCS.Text)
                 };
 
-
-
                 if (chkCommercial.Checked == true)
                 {
+
                     Commercial commercial = new Commercial()
                     {
                         ChiffreAffaire = Convert.ToInt32(txtCA),
@@ -265,7 +256,16 @@ namespace GestionSalaraies
 
         private void chkCommercial_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (chkCommercial.Checked == true)
+            {
+                grpBoxCommerciaux.Visible = true;
+                txtCA.ReadOnly = false;
+                txtTxCom.ReadOnly = false;
+            }
+            else
+            {
+                grpBoxCommerciaux.Visible = false; 
+            }
         }
     }
 }

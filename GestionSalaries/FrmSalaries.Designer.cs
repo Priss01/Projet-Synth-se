@@ -101,6 +101,7 @@
             this.chkCommercial.Text = "Le salarié est un commercial";
             this.chkCommercial.UseVisualStyleBackColor = true;
             this.chkCommercial.CheckedChanged += new System.EventHandler(this.chkCommercial_CheckedChanged);
+            this.chkCommercial.Click += new System.EventHandler(this.chkCommercial_CheckedChanged);
             // 
             // txtDatenaisance
             // 
@@ -255,6 +256,7 @@
             this.btnAnnuler.TabIndex = 0;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnModifier
             // 
@@ -265,6 +267,7 @@
             this.btnModifier.TabIndex = 0;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // txtNomS
             // 
@@ -341,6 +344,7 @@
             this.btnNouveauS.TabIndex = 4;
             this.btnNouveauS.Text = "Nouveau";
             this.btnNouveauS.UseVisualStyleBackColor = true;
+            this.btnNouveauS.Click += new System.EventHandler(this.btnNouveau_Click);
             // 
             // errorProvider1
             // 
